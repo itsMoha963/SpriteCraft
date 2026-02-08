@@ -1,0 +1,20 @@
+{
+  "name": "spritecraft",
+  "version": "1.0.0",
+  "description": "*SpriteCraft* is a *simple yet powerful pixel art editor* where you can create and customize sprites for games, animations, or art projects. 🎨",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.ts",
+    "dev": "nodemon --exec 'ts-node-esm' index.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^25.2.2",
+    "nodemon": "^3.1.11",
+    "ts-node": "^10.9.2"
+  }
+}
