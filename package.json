@@ -2,14 +2,20 @@
   "name": "spritecraft",
   "private": true,
   "version": "0.0.0",
+  "description": "A simple yet powerful pixel art editor for creating and customizing sprites",
+  "author": "SpriteCraft Team",
   "type": "module",
-  "main": "src/electron/main",
+  "main": "dist-electron/main.js",
   "scripts": {
     "dev:react": "vite",
     "dev:electron": "electron .",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "transpile:electron": "tsc --project src/electron/tsconfig.json",
+    "dist:mac": "npm run transpile:electron && npm run build && electron-builder --mac --arm64",
+    "dist:win": "npm run transpile:electron && npm run build && electron-builder --win --x64",
+    "dist:linux": "npm run transpile:electron && npm run build && electron-builder --linux --x64"
   },
   "dependencies": {
     "react": "^19.2.0",
@@ -21,7 +27,9 @@
     "@types/react": "^19.2.5",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^5.1.1",
+    "cross-env": "^10.1.0",
     "electron": "^40.2.1",
+    "electron-builder": "^26.7.0",
     "eslint": "^9.39.1",
     "eslint-plugin-react-hooks": "^7.0.1",
     "eslint-plugin-react-refresh": "^0.4.24",
